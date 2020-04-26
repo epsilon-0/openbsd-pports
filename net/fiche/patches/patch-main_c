@@ -1,0 +1,39 @@
+$OpenBSD$
+
+Index: main.c
+--- main.c.orig
++++ main.c
+@@ -27,7 +27,11 @@ $ cat fiche.c | nc localhost 9999
+ #include <unistd.h>
+ #include <getopt.h>
+ 
++#include <err.h>
++#include <errno.h>
++#include <libgen.h>
+ 
++
+ int main(int argc, char **argv) {
+ 
+     // Fiche settings instance
+@@ -137,6 +141,21 @@ int main(int argc, char **argv) {
+         }
+     }
+ 
++#if defined(__OpenBSD__)
++    int unveil_err = unveil(fs.output_dir_path, "rwxc");
++    if (unveil_err != 0) {
++         err(unveil_err, "Error while accessing code storage folder: %s", fs.output_dir_path);
++         return unveil_err;
++    }
++    if (fs.log_file_path != NULL) {
++        unveil_err = unveil(dirname(fs.log_file_path), "rwxc");
++	if (unveil_err != 0) {
++            err(unveil_err, "Error while accessing code storage folder: %s", fs.output_dir_path);
++            return unveil_err;
++	}
++    }
++    pledge("stdio rpath wpath cpath inet unix", NULL);
++#endif
+ 
+     fiche_run(fs);
+ 
