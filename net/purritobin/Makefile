@@ -2,7 +2,7 @@
 
 COMMENT =	minimalistic command line pastebin
 
-PV =		0.1.2
+PV =		0.1.3
 
 DISTNAME =	${PV}
 PKGNAME =	purritobin-${PV}
