@@ -24,13 +24,20 @@ USE_GMAKE =	Yes
 
 ALL_TARGET =	default
 
-BUILD_DEPENDS 	=	devel/libuv
+BUILD_DEPENDS =	devel/libuv
+
+RUN_DEPENDS =	${BDEPENDS}
+
+WANTLIBS =	uv>=2.1 \
+		ssl>=48.0
 
 MAKE_FLAGS =	WITH_OPENSSL=1 WITH_LIBUV=1
 
-CFLAGS		+= -I/usr/local/include
-LDFLAGS		+= -L/usr/local/lib
+CFLAGS +=	-I/usr/local/include \
+		-L/usr/local/lib \
+		-luv \
+		-lssl
 
-SHARED_LIBS	= libusockets 0.3.5
+SHARED_LIBS =	 usockets 0.3
 
 .include <bsd.port.mk>

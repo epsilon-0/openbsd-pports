@@ -1,0 +1,20 @@
+$OpenBSD$
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -9,12 +9,8 @@ bindir	?= $(exec_prefix)/bin
+ CXXFLAGS	+= -lpthread -std=c++2a -Wall -Wextra -Wpedantic -Wstrict-overflow
+ 
+ # include additional standard directories
+-CFLAGS	+= -I/usr/local/include -L/usr/local/lib -lusockets
+-
+-# on openbd we need libuv
+-ifeq ($(WITH_LIBUV), 1)
+-CFLAGS	+= -luv
+-endif
++# on openbsd we need libuv
++CFLAGS	+= -I/usr/local/include -L/usr/local/lib -lusockets -luv
+ 
+ # requirements
+ # uwebsockets: https://github.com/uNetworking/uWebSockets

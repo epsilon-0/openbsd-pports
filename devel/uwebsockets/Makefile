@@ -22,7 +22,7 @@ WRKDIST =	${WRKDIR}/uWebSockets-${PV}
 
 USE_GMAKE =	Yes
 
-BUILD_DEPENDS =	devel/usockets
+RUN_DEPENDS =	devel/usockets>=0.3.5
 
 NO_BUILD =	Yes
 

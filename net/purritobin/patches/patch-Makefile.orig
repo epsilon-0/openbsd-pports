@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -12,9 +12,9 @@ CXXFLAGS	+= -lpthread -std=c++2a -Wall -Wextra -Wpedan
+ CFLAGS	+= -I/usr/local/include -L/usr/local/lib -lusockets
+ 
+ # on openbd we need libuv
+-ifeq ($(WITH_LIBUV), 1)
++.if defined(WITH_LIBUV)
+ CFLAGS	+= -luv
+-endif
++.endif
+ 
+ # requirements
+ # uwebsockets: https://github.com/uNetworking/uWebSockets
