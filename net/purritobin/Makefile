@@ -26,7 +26,8 @@ BUILD_DEPENDS =	devel/uwebsockets \
 
 RUN_DEPENDS =	${BUILD_DEPENDS}
 
-LIB_DEPENDS =	${BUILD_DEPENDS}
+LIB_DEPENDS =	devel/usockets \
+		devel/libuv
 
 WANTLIBS =	usockets>=0.3 \
 		uv>=2.1
