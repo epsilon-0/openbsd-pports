@@ -1,9 +1,11 @@
 $OpenBSD$
 
+add a shared lib target and default target for compilation
+
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -1,3 +1,15 @@
+@@ -1,3 +1,14 @@
 +DESTDIR ?=
 +
 +prefix ?= "/usr/local"
@@ -12,23 +14,24 @@ Index: Makefile
 +includedir?=	"$(exec_prefix)/include/uSockets"
 +
 +# OpenBSD specific library version
-+VERSION = 0.3
-+LIBTARGET = libusockets.so.$(VERSION)
++LIBTARGET = libusockets.so.$(LIBusockets_VERSION)
 +
 +
  # WITH_OPENSSL=1 enables OpenSSL 1.1+ support
  ifeq ($(WITH_OPENSSL),1)
  	override CFLAGS += -DLIBUS_USE_OPENSSL
-@@ -35,9 +47,27 @@ endif
+@@ -33,11 +44,28 @@ ifeq ($(WITH_ASAN),1)
+ endif
+ 
  override CFLAGS += -std=c11 -Isrc
- override LDFLAGS += uSockets.a
+-override LDFLAGS += uSockets.a
  
 -# By default we build the uSockets.a static library
 +# By default we build the libusockets.so shared library
  default:
  	rm -f *.o
-+	$(CC) $(CFLAGS) $(CPPFLAGS) -fPIC -c src/*.c src/eventing/*.c src/crypto/*.c
-+	$(CC) -shared -fPIC -Wl,-soname=$(LIBTARGET) -o $(LIBTARGET) *.o
++	$(CC) -fPIC -c src/*.c src/eventing/*.c src/crypto/*.c $(CFLAGS) $(CPPFLAGS)
++	$(CC) -shared -fPIC -Wl,-soname,$(LIBTARGET) $(CFLAGS) $(CPPFLAGS) -o $(LIBTARGET) *.o $(LDFLAGS)
 +
 +install: 
 +	# install the folders needed  (making sure that the exist)
@@ -48,7 +51,7 @@ Index: Makefile
  	$(CC) $(CFLAGS) -flto -O3 -c src/*.c src/eventing/*.c src/crypto/*.c
  	$(AR) rvs uSockets.a *.o
  
-@@ -52,4 +82,5 @@ swift_examples:
+@@ -52,4 +80,5 @@ swift_examples:
  clean:
  	rm -f *.o
  	rm -f *.a

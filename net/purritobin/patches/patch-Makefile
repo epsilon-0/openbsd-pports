@@ -1,20 +1,31 @@
 $OpenBSD$
 
+Add needed CXXFLAGS/LDFLAGS and fix all target.
+
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -9,12 +9,8 @@ bindir	?= $(exec_prefix)/bin
+@@ -9,19 +9,16 @@ bindir	?= $(exec_prefix)/bin
  CXXFLAGS	+= -lpthread -std=c++2a -Wall -Wextra -Wpedantic -Wstrict-overflow
  
  # include additional standard directories
 -CFLAGS	+= -I/usr/local/include -L/usr/local/lib -lusockets
--
++# on openbsd we need libuv
++CXXFLAGS += -I${LOCALBASE}/include -I${LOCALBASE}/include/uSockets
++LDFLAGS += -L/usr/local/lib -lusockets -luv
+ 
 -# on openbd we need libuv
 -ifeq ($(WITH_LIBUV), 1)
 -CFLAGS	+= -luv
 -endif
-+# on openbsd we need libuv
-+CFLAGS	+= -I/usr/local/include -L/usr/local/lib -lusockets -luv
- 
+-
  # requirements
  # uwebsockets: https://github.com/uNetworking/uWebSockets
+ # uSockets   : https://github.com/uNetworking/uSockets
+ # plus all their dependencies (PurritoBin doesn't need zlib for uWebSockets)
+ all:
+-	$(CXX) -DUWS_NO_ZLIB main.cc purrito.cc $(CXXFLAGS) $(CFLAGS) -o $(TARGET)
++	$(CXX) -DUWS_NO_ZLIB main.cc purrito.cc $(CXXFLAGS) -o $(TARGET) $(LDFLAGS)
+ 
+ install:
+ 	install -d $(DESTDIR)$(bindir)

@@ -1,38 +1,29 @@
 # $OpenBSD $
 
 COMMENT =	minimalistic command line pastebin
-
-PV =		0.1.3
-
-DISTNAME =	${PV}
-PKGNAME =	purritobin-${PV}
-
+PKGNAME =	${DISTNAME:L}
 CATEGORIES =	net
 
-HOMEPAGE =	https://bsd.ac/
+GH_ACCOUNT =	PurritoBin
+GH_PROJECT =	PurritoBin
+GH_TAGNAME =	0.1.3
 
+HOMEPAGE =	https://bsd.ac/
 MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
 
 # ISC
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/PurritoBin/PurritoBin/archive/
+WANTLIB += ${COMPILER_LIBCXX} c m usockets uv
 
-WRKDIST =	${WRKDIR}/PurritoBin-${PV}
+# C++2a
+COMPILER =	base-clang ports-gcc
 
-BUILD_DEPENDS =	devel/uwebsockets \
-		devel/usockets \
-		devel/libuv
+BUILD_DEPENDS =	devel/uwebsockets
 
-RUN_DEPENDS =	${BUILD_DEPENDS}
+LIB_DEPENDS =	devel/libuv \
+		devel/usockets
 
-LIB_DEPENDS =	devel/usockets \
-		devel/libuv
-
-WANTLIBS =	usockets>=0.3 \
-		uv>=2.1
-
-CFLAGS =	-I/usr/local/include -L/usr/local/lib
-LDFLAGS =	-L/usr/local/lib
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
