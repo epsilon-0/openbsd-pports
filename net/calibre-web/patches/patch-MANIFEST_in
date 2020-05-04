@@ -1,0 +1,10 @@
+$OpenBSD$
+
+make correct directory for manifest
+
+Index: MANIFEST.in
+--- MANIFEST.in.orig
++++ MANIFEST.in
+@@ -1 +1 @@
+-graft src/calibreweb
++graft calibreweb
