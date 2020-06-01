@@ -7,4 +7,4 @@ Index: MANIFEST.in
 +++ MANIFEST.in
 @@ -1 +1 @@
 -graft src/calibreweb
-+graft calibreweb
++graft cps

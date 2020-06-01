@@ -5,7 +5,7 @@ modify setup.py to create a default install target
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -25,22 +25,10 @@ import os
+@@ -25,22 +25,12 @@ import os
  import re
  import codecs
  
@@ -28,8 +28,10 @@ Index: setup.py
 -    package_dir = {'': 'src'},
 -    version=find_version("src", "calibreweb", "cps", "constants.py")
 +    description="Web app for calibre",
-+    version="0.6.6",
++    version='0.6.7',
 +    author="Jan B",
 +    url="https://github.com/janeczku/calibre-web",
 +    packages=find_packages(),
++    py_modules=[ 'cps' ],
  )
++
