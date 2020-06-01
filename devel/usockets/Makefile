@@ -8,7 +8,7 @@ SHARED_LIBS +=	usockets 0.0
 
 GH_ACCOUNT =	uNetworking
 GH_PROJECT =	uSockets
-GH_TAGNAME =	v0.3.5
+GH_TAGNAME =	v0.4.0
 
 MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
 

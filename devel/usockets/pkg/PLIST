@@ -10,4 +10,5 @@ include/uSockets/internal/loop_data.h
 include/uSockets/internal/networking/
 include/uSockets/internal/networking/bsd.h
 include/uSockets/libusockets.h
+@static-lib lib/libusockets.a
 @lib lib/libusockets.so.${LIBusockets_VERSION}
