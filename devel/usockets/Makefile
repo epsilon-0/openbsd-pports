@@ -15,10 +15,12 @@ MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
+WANTLIB += crypto ssl uv
+
 # C11
 COMPILER =	base-clang ports-gcc
 
-BUILD_DEPENDS =	devel/libuv
+LIB_DEPENDS =	devel/libuv
 
 USE_GMAKE =	Yes
 ALL_TARGET =	default
