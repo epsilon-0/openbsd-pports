@@ -1,5 +1,7 @@
 $OpenBSD$
 
+uSockets lives separately from uWebSockets
+
 Index: src/Loop.h
 --- src/Loop.h.orig
 +++ src/Loop.h

@@ -4,7 +4,7 @@ COMMENT	=	eventing, networking & crypto for async applications
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	devel
 
-SHARED_LIBS +=	usockets 0.0
+SHARED_LIBS =	usockets 0.0
 
 GH_ACCOUNT =	uNetworking
 GH_PROJECT =	uSockets
@@ -15,9 +15,10 @@ MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	crypto ssl uv
+# C11
+COMPILER =	base-clang ports-gcc
 
-LIB_DEPENDS =	devel/libuv
+BUILD_DEPENDS =	devel/libuv
 
 USE_GMAKE =	Yes
 ALL_TARGET =	default

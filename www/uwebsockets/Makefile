@@ -1,12 +1,12 @@
 # $OpenBSD$
 
-COMMENT	=	ultra fast, simple, secure, standards compliant web I/O
+COMMENT	=	ultra fast, simple, secure, standards compliant web server
 PKGNAME =	${DISTNAME:L}
-CATEGORIES =	devel
+CATEGORIES =	www
 
 GH_ACCOUNT =	uNetworking
 GH_PROJECT =	uWebSockets
-GH_TAGNAME =	v0.17.6
+GH_TAGNAME =	v18.2.0
 
 MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
 

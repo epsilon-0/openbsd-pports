@@ -1,6 +1,7 @@
 $OpenBSD$
 
-add shared + static lib target and default target for compilation
+add shared + static lib + default targets
+remove -flto -O3
 
 Index: Makefile
 --- Makefile.orig
@@ -20,7 +21,7 @@ Index: Makefile
  # WITH_OPENSSL=1 enables OpenSSL 1.1+ support
  ifeq ($(WITH_OPENSSL),1)
  	override CFLAGS += -DLIBUS_USE_OPENSSL
-@@ -33,14 +44,34 @@ ifeq ($(WITH_ASAN),1)
+@@ -33,18 +44,38 @@ ifeq ($(WITH_ASAN),1)
  endif
  
  override CFLAGS += -std=c11 -Isrc
@@ -30,26 +31,27 @@ Index: Makefile
 -default:
 +static:
  	rm -f *.o
- 	$(CC) $(CFLAGS) -flto -O3 -c src/*.c src/eventing/*.c src/crypto/*.c
+-	$(CC) $(CFLAGS) -flto -O3 -c src/*.c src/eventing/*.c src/crypto/*.c
 -	$(AR) rvs uSockets.a *.o
++	$(CC) $(CFLAGS) -c src/*.c src/eventing/*.c src/crypto/*.c
 +	$(AR) rvs libusockets.a *.o
  
 +dynamic:
 +	rm -f *.o
-+	$(CC) -fPIC -flto -O3 -c src/*.c src/eventing/*.c src/crypto/*.c $(CFLAGS)
++	$(CC) -fPIC -c src/*.c src/eventing/*.c src/crypto/*.c $(CFLAGS)
 +	$(CC) -shared -fPIC -Wl,-soname,$(LIBTARGET) $(CFLAGS) -o $(LIBTARGET) *.o $(LDFLAGS)
 +
 +default: static dynamic
 +
-+install: default
++install:
 +	# install the folders needed  (making sure that the exist)
 +	install -d "$(DESTDIR)$(libdir)" \
 +	"$(DESTDIR)$(includedir)/internal/eventing" \
 +	"$(DESTDIR)$(includedir)/internal/networking"
 +	# OpenBSD specific library version
-+	install -m 755 $(LIBTARGET) "$(DESTDIR)$(libdir)/"
++	install -m 644 $(LIBTARGET) "$(DESTDIR)$(libdir)/"
 +	# install static library
-+	install -m 755 libusockets.a "$(DESTDIR)$(libdir)/"
++	install -m 644 libusockets.a "$(DESTDIR)$(libdir)/"
 +	# we also install all the header files
 +	install  src/*.h "$(DESTDIR)$(includedir)/"
 +	install -m 644 src/internal/*.h "$(DESTDIR)$(includedir)/internal/"
@@ -59,6 +61,11 @@ Index: Makefile
  # Builds all examples
  .PHONY: examples
  examples: default
+-	for f in examples/*.c; do $(CC) -flto -O3 $(CFLAGS) -o $$(basename "$$f" ".c") "$$f" $(LDFLAGS); done
++	for f in examples/*.c; do $(CC) $(CFLAGS) -o $$(basename "$$f" ".c") "$$f" $(LDFLAGS); done
+ 
+ swift_examples:
+ 	swiftc -O -I . examples/swift_http_server/main.swift uSockets.a -o swift_http_server
 @@ -52,4 +83,5 @@ swift_examples:
  clean:
  	rm -f *.o

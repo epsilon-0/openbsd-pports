@@ -14,18 +14,19 @@ MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
 # ISC
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	${COMPILER_LIBCXX} c m usockets uv
+# uses pledge()
+WANTLIB += ${COMPILER_LIBCXX} c m pthread ssl usockets
 
 # C++2a
 COMPILER =	base-clang ports-gcc
 
-BUILD_DEPENDS =	devel/uwebsockets
-
-LIB_DEPENDS =	devel/libuv \
+BUILD_DEPENDS =	www/uwebsockets \
 		devel/usockets
+
+LIB_DEPENDS =	devel/usockets
 
 NO_TEST	=	Yes
 
-MAKE_FLAGS =	-DUSE_STATIC -DUSE_LIBUV
+MAKE_FLAGS =	-DUSE_LIBUV
 
 .include <bsd.port.mk>
