@@ -15,13 +15,12 @@ MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
 PERMIT_PACKAGE =	Yes
 
 # uses pledge()
-WANTLIB += ${COMPILER_LIBCXX} c m pthread ssl usockets
+WANTLIB += ${COMPILER_LIBCXX} c m ssl usockets uv
 
 # C++2a
 COMPILER =	base-clang ports-gcc
 
-BUILD_DEPENDS =	www/uwebsockets \
-		devel/usockets
+BUILD_DEPENDS =	www/uwebsockets
 
 LIB_DEPENDS =	devel/usockets
 
