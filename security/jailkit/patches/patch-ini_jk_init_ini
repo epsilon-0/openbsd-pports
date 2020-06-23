@@ -1,0 +1,30 @@
+$OpenBSD: patch-ini_jk_init_ini,v 1.3 2014/03/26 17:38:27 gonzalo Exp $
+
+fix some default paths in the jail creation configuration file
+
+Index: ini/jk_init.ini
+--- ini/jk_init.ini.orig
++++ ini/jk_init.ini
+@@ -2,18 +2,18 @@
+ # this section probably needs adjustment on 64bit systems
+ # or non-Linux systems
+ comment = common files for all jails that need user/group information
+-paths = /lib/libnsl.so.1, /lib64/libnsl.so.1, /lib/libnss*.so.2, /lib64/libnss*.so.2, /lib/i386-linux-gnu/libnsl.so.1, /lib/i386-linux-gnu/libnss*.so.2, /lib/x86_64-linux-gnu/libnsl.so.1, /lib/x86_64-linux-gnu/libnss*.so.2, /lib/arm-linux-gnueabihf/libnss*.so.2, /lib/arm-linux-gnueabihf/libnsl*.so.1, /etc/nsswitch.conf, /etc/ld.so.conf
++paths = /lib/libnsl.so.1, /lib64/libnsl.so.1, /lib/libnss*.so.2, /lib64/libnss*.so.2, /lib/i386-linux-gnu/libnsl.so.1, /lib/i386-linux-gnu/libnss*.so.2, /lib/x86_64-linux-gnu/libnsl.so.1, /lib/x86_64-linux-gnu/libnss*.so.2, ${SYSCONFDIR}/nsswitch.conf, ${SYSCONFDIR}/ld.so.conf
+ # Solaris needs 
+-# paths = /etc/default/nss, /lib/libnsl.so.1, /usr/lib/nss_*.so.1, /etc/nsswitch.conf
++# paths = ${SYSCONFDIR}/default/nss, /lib/libnsl.so.1, /usr/lib/nss_*.so.1, ${SYSCONFDIR}/nsswitch.conf
+ 
+ [netbasics]
+ comment = common files for all jails that need any internet connectivity
+-paths = /lib/libnss_dns.so.2, /lib64/libnss_dns.so.2, /lib/libnss_mdns*.so.2, /etc/resolv.conf, /etc/host.conf, /etc/hosts, /etc/protocols, /etc/services
++paths = /lib/libnss_dns.so.2, /lib64/libnss_dns.so.2, ${SYSCONFDIR}/resolv.conf, ${SYSCONFDIR}/host.conf, ${SYSCONFDIR}/hosts, ${SYSCONFDIR}/protocols, ${SYSCONFDIR}/services
+ # on Solaris devices /dev/udp and /dev/tcp might be needed too, not sure
+ 
+ [logbasics]
+ comment = timezone information and log sockets
+-paths = /etc/localtime
++paths = ${SYSCONFDIR}/localtime
+ need_logsocket = 1
+ # Solaris does not need logsocket
+ # but needs 

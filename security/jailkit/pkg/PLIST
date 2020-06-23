@@ -1,0 +1,52 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/20 07:15:30 sebastia Exp $
+@mode 4755
+@bin bin/jk_uchroot
+@mode
+@man man/man8/jailkit.8
+@man man/man8/jk_check.8
+@man man/man8/jk_chrootlaunch.8
+@man man/man8/jk_chrootsh.8
+@man man/man8/jk_cp.8
+@man man/man8/jk_init.8
+@man man/man8/jk_jailuser.8
+@man man/man8/jk_list.8
+@man man/man8/jk_lsh.8
+@man man/man8/jk_procmailwrapper.8
+@man man/man8/jk_socketd.8
+@man man/man8/jk_uchroot.8
+@man man/man8/jk_update.8
+sbin/jk_check
+@bin sbin/jk_chrootlaunch
+@mode 4755
+@shell sbin/jk_chrootsh
+@mode
+sbin/jk_cp
+sbin/jk_init
+sbin/jk_jailuser
+sbin/jk_list
+@bin sbin/jk_lsh
+@mode 4755
+@bin sbin/jk_procmailwrapper
+@mode
+@bin sbin/jk_socketd
+sbin/jk_update
+@sample ${SYSCONFDIR}/jailkit/
+share/examples/jailkit/
+share/examples/jailkit/jk_check.ini
+@sample ${SYSCONFDIR}/jailkit/jk_check.ini
+share/examples/jailkit/jk_chrootsh.ini
+@sample ${SYSCONFDIR}/jailkit/jk_chrootsh.ini
+share/examples/jailkit/jk_init.ini
+@sample ${SYSCONFDIR}/jailkit/jk_init.ini
+share/examples/jailkit/jk_lsh.ini
+@sample ${SYSCONFDIR}/jailkit/jk_lsh.ini
+share/examples/jailkit/jk_socketd.ini
+@sample ${SYSCONFDIR}/jailkit/jk_socketd.ini
+share/examples/jailkit/jk_uchroot.ini
+@sample ${SYSCONFDIR}/jailkit/jk_uchroot.ini
+share/examples/jailkit/jk_update.ini
+@sample ${SYSCONFDIR}/jailkit/jk_update.ini
+share/jailkit/
+${MODPY_COMMENT}share/jailkit/${MODPY_PYCACHE}/
+share/jailkit/${MODPY_PYCACHE}jk_lib.${MODPY_PYC_MAGIC_TAG}pyc
+share/jailkit/jk_lib.py

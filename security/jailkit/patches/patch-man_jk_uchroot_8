@@ -1,0 +1,13 @@
+$OpenBSD: patch-man_jk_uchroot_8,v 1.1.1.1 2010/09/20 07:15:31 sebastia Exp $
+Index: man/jk_uchroot.8
+--- man/jk_uchroot.8.orig
++++ man/jk_uchroot.8
+@@ -31,7 +31,7 @@ In the above example jk_uchroot is configured not to c
+ 
+ .SH FILES
+ 
+-.I ${SYSCONFDIR}/jailkit/jk_uchroot.ini
++.I /etc/jailkit/jk_uchroot.ini
+ 
+ .SH DIAGNOSTICS
+ 
