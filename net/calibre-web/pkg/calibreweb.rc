@@ -2,7 +2,7 @@
 #
 # $OpenBSD$
 
-daemon="${VARBASE}/calibre-web/cps.py"
+daemon="/var/calibre-web/cps.py"
 daemon_user="_calibreweb"
 
 . /etc/rc.d/rc.subr
