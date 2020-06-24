@@ -1,7 +1,7 @@
 # $OpenBSD $
 
 COMMENT =	neomutt and isync configuration with good defaults
-DISTNAME = mutt-wizard-0.0.20200531
+DISTNAME =	mutt-wizard-0.0.20200531
 CATEGORIES =	mail
 
 GH_ACCOUNT =	LukeSmithxyz
