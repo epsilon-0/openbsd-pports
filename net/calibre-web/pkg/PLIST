@@ -1,7 +1,7 @@
 @comment $OpenBSD: PLIST,v$
 @newgroup _calibreweb:858
 @newuser _calibreweb:858:858:daemon:Calibre Web Daemon:${PREFIX}/calibre-web:/sbin/nologin
-@rcscript ${RCDIR}/calibre-web
+@rcscript ${RCDIR}/calibreweb
 @owner _calibreweb
 @group _calibreweb
 calibre-web/
