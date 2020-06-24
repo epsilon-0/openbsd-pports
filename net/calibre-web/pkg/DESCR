@@ -1,7 +1,7 @@
-Calibre-Web is a web app providing a clean interface for 
-browsing, reading and downloading eBooks using an existing 
+Calibre-Web is a web app providing a clean interface for
+browsing, reading and downloading eBooks using an existing
 Calibre database. It can be integrated with any calibre
 instance to provide a cleaner web experience than the
-default calibre server, with a lot of clean features, 
+default calibre server, with a lot of clean features,
 including multi-user support, bookshelf management and
 tag management.

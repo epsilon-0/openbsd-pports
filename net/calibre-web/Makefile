@@ -19,7 +19,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
-MODPY_SETUPTOOLS =	Yes
+MODPY_SETUPTOOLS =	No
 
 RUN_DEPENDS =	archivers/py-rarfile${MODPY_FLAVOR} \
 		databases/py-sqlalchemy${MODPY_FLAVOR} \
@@ -41,6 +41,17 @@ RUN_DEPENDS =	archivers/py-rarfile${MODPY_FLAVOR} \
 		www/py-flask-principal \
 		www/py-requests${MODPY_FLAVOR} \
 		www/py-tornado${MODPY_FLAVOR}
+
+NO_TEST =	Yes
+NO_BUILD =	Yes
+
+PREFIX =	${VARBASE}
+INSTDIR =	${PREFIX}/calibre-web
+
+do-install:
+	${INSTALL_DATA_DIR} ${INSTDIR}
+	cp -r ${WRKSRC}/cps.py ${WRKSRC}/cps ${INSTDIR}
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${INSTDIR}
 
 .include <bsd.port.mk>
 
