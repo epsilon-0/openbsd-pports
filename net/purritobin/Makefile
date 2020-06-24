@@ -6,7 +6,7 @@ CATEGORIES =	net
 
 GH_ACCOUNT =	PurritoBin
 GH_PROJECT =	PurritoBin
-GH_TAGNAME =	0.2.1
+GH_TAGNAME =	0.2.2
 
 HOMEPAGE =	https://bsd.ac/
 MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
@@ -27,5 +27,12 @@ LIB_DEPENDS =	net/usockets
 NO_TEST	=	Yes
 
 MAKE_FLAGS =	-DUSE_LIBUV
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/purritobin
+	${INSTALL_DATA} ${WRKSRC}/frontend/paste.html \
+		${PREFIX}/share/purritobin
+	${INSTALL_DATA} ${WRKSRC}/clients/POSIX_shell_client.sh \
+		${PREFIX}/share/purritobin
 
 .include <bsd.port.mk>
