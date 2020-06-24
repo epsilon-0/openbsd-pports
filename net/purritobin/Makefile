@@ -22,7 +22,7 @@ COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS =	www/uwebsockets
 
-LIB_DEPENDS =	devel/usockets
+LIB_DEPENDS =	net/usockets
 
 NO_TEST	=	Yes
 
