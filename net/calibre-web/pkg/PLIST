@@ -89,6 +89,11 @@ calibre-web/cps/shelf.py
 calibre-web/cps/static/
 calibre-web/cps/static/css/
 calibre-web/cps/static/css/caliBlur.min.css
+@owner
+@group
+calibre-web/cps/static/css/caliBlur_override.css
+@owner _calibreweb
+@group _calibreweb
 calibre-web/cps/static/css/fonts/
 calibre-web/cps/static/css/fonts/GrandHotel-Regular.ttf
 calibre-web/cps/static/css/fonts/fontello.eot
@@ -330,6 +335,11 @@ calibre-web/cps/static/js/archive/unzip.js
 calibre-web/cps/static/js/caliBlur.js
 calibre-web/cps/static/js/details.js
 calibre-web/cps/static/js/edit_books.js
+@owner
+@group
+calibre-web/cps/static/js/filter_grid.js
+@owner _calibreweb
+@group _calibreweb
 calibre-web/cps/static/js/filter_list.js
 calibre-web/cps/static/js/get_meta.js
 calibre-web/cps/static/js/io/
@@ -769,6 +779,11 @@ calibre-web/cps/templates/admin.html
 calibre-web/cps/templates/author.html
 calibre-web/cps/templates/book_edit.html
 calibre-web/cps/templates/book_exists_flash.html
+@owner
+@group
+calibre-web/cps/templates/book_table.html
+@owner _calibreweb
+@group _calibreweb
 calibre-web/cps/templates/config_edit.html
 calibre-web/cps/templates/config_view_edit.html
 calibre-web/cps/templates/detail.html
@@ -777,6 +792,11 @@ calibre-web/cps/templates/email_edit.html
 calibre-web/cps/templates/feed.xml
 calibre-web/cps/templates/fragment.html
 calibre-web/cps/templates/generate_kobo_auth_url.html
+@owner
+@group
+calibre-web/cps/templates/grid.html
+@owner _calibreweb
+@group _calibreweb
 calibre-web/cps/templates/http_error.html
 calibre-web/cps/templates/index.html
 calibre-web/cps/templates/index.xml

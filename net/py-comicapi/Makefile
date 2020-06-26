@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	extension for computing string edit distances
-DISTNAME = py-comicapi-0.0pre20202305
+DISTNAME = py-comicapi-0.0pre20200523
 PKGNAME =	${DISTNAME:L}
 
 GH_ACCOUNT =	OzzieIsaacs
@@ -21,7 +21,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 
-MODPY_PI =	Yes
+MODPY_PI =	No
 
 MODPY_SETUPTOOLS =	Yes
 
