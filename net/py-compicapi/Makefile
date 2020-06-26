@@ -12,7 +12,7 @@ MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 CATEGORIES =	net
 
-HOMEPAGE =	https://github.com/ztane/python-Levenshtein
+HOMEPAGE =	https://github.com/OzzieIsaacs/comicapi
 
 MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
 
@@ -20,6 +20,8 @@ MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
+
+MODPY_PI =	Yes
 
 MODPY_SETUPTOOLS =	Yes
 
