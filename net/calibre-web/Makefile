@@ -24,7 +24,6 @@ MODPY_SETUPTOOLS =	No
 RUN_DEPENDS =	archivers/py-rarfile${MODPY_FLAVOR} \
 		databases/py-sqlalchemy${MODPY_FLAVOR} \
 		devel/py-babel${MODPY_FLAVOR} \
-		devel/py-comicapi\
 		devel/py-singledispatch \
 		devel/py-backports-abc \
 		devel/py-iso639${MODPY_FLAVOR} \
@@ -33,6 +32,7 @@ RUN_DEPENDS =	archivers/py-rarfile${MODPY_FLAVOR} \
 		devel/py-tz${MODPY_FLAVOR} \
 		devel/py-wand \
 		graphics/py-Pillow${MODPY_FLAVOR} \
+		net/py-comicapi \
 		textproc/py-PyPDF2${MODPY_FLAVOR} \
 		textproc/py-natsort \
 		textproc/py-unidecode${MODPY_FLAVOR} \

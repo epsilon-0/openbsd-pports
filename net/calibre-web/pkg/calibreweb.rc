@@ -8,9 +8,9 @@ daemon_user="_calibreweb"
 
 . /etc/rc.d/rc.subr
 
-#rc_stop() {
-#    pkill -T "${daemon_rtable}" -xf "${pexp}"
-#}
+rc_stop() {
+    pkill -T "${daemon_rtable}" -xf "${pexp}"
+}
 
 rc_bg=YES
 
