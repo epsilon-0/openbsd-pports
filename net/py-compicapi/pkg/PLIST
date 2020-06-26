@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v$
+lib/python${MODPY_VERSION}/site-packages/comicapi/
+lib/python${MODPY_VERSION}/site-packages/comicapi-2.1.1-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/comicapi-2.1.1-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/comicapi-2.1.1-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/comicapi-2.1.1-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/comicapi-2.1.1-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/comicapi-2.1.1-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/comicapi/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/comicapi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/comicapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/comicapi/${MODPY_PYCACHE}comet.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/comicapi/${MODPY_PYCACHE}comicarchive.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/comicapi/${MODPY_PYCACHE}comicbookinfo.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/comicapi/${MODPY_PYCACHE}comicinfoxml.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/comicapi/${MODPY_PYCACHE}filenameparser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/comicapi/${MODPY_PYCACHE}genericmetadata.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/comicapi/${MODPY_PYCACHE}issuestring.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/comicapi/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/comicapi/comet.py
+lib/python${MODPY_VERSION}/site-packages/comicapi/comicarchive.py
+lib/python${MODPY_VERSION}/site-packages/comicapi/comicbookinfo.py
+lib/python${MODPY_VERSION}/site-packages/comicapi/comicinfoxml.py
+lib/python${MODPY_VERSION}/site-packages/comicapi/filenameparser.py
+lib/python${MODPY_VERSION}/site-packages/comicapi/genericmetadata.py
+lib/python${MODPY_VERSION}/site-packages/comicapi/issuestring.py
+lib/python${MODPY_VERSION}/site-packages/comicapi/utils.py
