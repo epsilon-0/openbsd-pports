@@ -2,7 +2,7 @@
 
 COMMENT =	web app for browsing, reading ebooks in calibre database
 
-MODPY_EGG_VERSION =	0.6.7
+MODPY_EGG_VERSION =	0.6.8
 
 GH_ACCOUNT =	janeczku
 GH_PROJECT =	calibre-web
@@ -24,9 +24,11 @@ MODPY_SETUPTOOLS =	No
 RUN_DEPENDS =	archivers/py-rarfile${MODPY_FLAVOR} \
 		databases/py-sqlalchemy${MODPY_FLAVOR} \
 		devel/py-babel${MODPY_FLAVOR} \
+		devel/py-comicapi\
 		devel/py-singledispatch \
 		devel/py-backports-abc \
 		devel/py-iso639${MODPY_FLAVOR} \
+		devel/py-jsonschema${MODPY_FLAVOR}\
 		devel/py-Levenshtein \
 		devel/py-tz${MODPY_FLAVOR} \
 		devel/py-wand \
@@ -50,7 +52,7 @@ INSTDIR =	${PREFIX}/calibre-web
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
-	cp -r ${WRKSRC}/cps.py ${WRKSRC}/cps ${INSTDIR}
+	cp -a ${WRKSRC}/cps.py ${WRKSRC}/cps ${INSTDIR}
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${INSTDIR}
 
 .include <bsd.port.mk>

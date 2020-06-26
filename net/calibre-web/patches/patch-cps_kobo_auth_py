@@ -1,0 +1,11 @@
+$OpenBSD$
+
+Index: cps/kobo_auth.py
+--- cps/kobo_auth.py.orig
++++ cps/kobo_auth.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python3.7
+ # -*- coding: utf-8 -*-
+ 
+ #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)

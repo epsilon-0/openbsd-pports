@@ -1,0 +1,11 @@
+$OpenBSD$
+
+Index: cps/services/SyncToken.py
+--- cps/services/SyncToken.py.orig
++++ cps/services/SyncToken.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python3.7
+ # -*- coding: utf-8 -*-
+ 
+ #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
