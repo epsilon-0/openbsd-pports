@@ -6,7 +6,7 @@ CATEGORIES =	net
 
 GH_ACCOUNT =	PurritoBin
 GH_PROJECT =	PurritoBin
-GH_TAGNAME =	0.2.2
+GH_TAGNAME =	0.2.3
 
 HOMEPAGE =	https://bsd.ac/
 MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
