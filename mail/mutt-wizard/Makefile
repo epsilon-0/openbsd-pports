@@ -1,12 +1,12 @@
 # $OpenBSD $
 
 COMMENT =	neomutt and isync configuration with good defaults
-DISTNAME =	mutt-wizard-0_20200812
+DISTNAME =	mutt-wizard-0_20200813
 CATEGORIES =	mail
 
 GH_ACCOUNT =	LukeSmithxyz
 GH_PROJECT =	mutt-wizard
-GH_COMMIT  =	57a3f317ade14ca65c02e29dedc59059b97ea6c2
+GH_COMMIT  =	2cd21c2db29e0a79a8fb7c667af6bf5b1a962da0
 
 MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
 
