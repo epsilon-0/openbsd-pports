@@ -5,10 +5,8 @@ COMMENT =		18n and l10n support for Flask
 MODPY_EGG_VERSION =	1.0.0
 DISTNAME =		Flask-Babel-${MODPY_EGG_VERSION}
 PKGNAME =		py3-${DISTNAME:L}
-
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
-
 CATEGORIES =		www
+MODPY_PI =		Yes
 
 HOMEPAGE =		https://github.com/python-babel/flask-babel
 
@@ -18,15 +16,16 @@ MAINTAINER =		Aisha Tammy <openbsd@aisha.cc>
 # Binary redistribution allowed with copyright
 PERMIT_PACKAGE =	Yes
 
-MODPY_PI =		Yes
-
 MODULES =		lang/python
 
-RUN_DEPENDS +=		www/py-flask${MODPY_FLAVOR} \
-			devel/py-babel${MODPY_FLAVOR}
+FLAVORS =		python3
+FLAVOR ?=		python3
 
 MODPY_SETUPTOOLS =	Yes
 
-NO_TEST =		Yes
+RUN_DEPENDS +=		devel/py-babel${MODPY_FLAVOR} \
+			www/py-flask${MODPY_FLAVOR}
+
+TEST_DEPENDS =		devel/py-tz${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
