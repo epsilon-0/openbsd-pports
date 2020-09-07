@@ -24,8 +24,8 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR ?=		python3
 
-BUILD_DEPENDS =		devel/py-mypy_extensions${MODPY_FLAVOR} \
-			devel/py-typed_ast${MODPY_FLAVOR} \
+BUILD_DEPENDS =		devel/py-mypy-extensions${MODPY_FLAVOR} \
+			devel/py-typed-ast${MODPY_FLAVOR} \
 			devel/py-typing-extensions${MODPY_FLAVOR} \
 			sysutils/py-psutil${MODPY_FLAVOR}
 
