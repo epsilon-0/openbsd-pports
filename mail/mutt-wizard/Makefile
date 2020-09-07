@@ -1,16 +1,17 @@
 # $OpenBSD $
 
 COMMENT =	neomutt and isync configuration with good defaults
-DISTNAME =	mutt-wizard-0_20200906
+# commit date 20200906
+DISTNAME =	mutt-wizard-20200906
 CATEGORIES =	mail
 
 GH_ACCOUNT =	LukeSmithxyz
 GH_PROJECT =	mutt-wizard
-GH_COMMIT  =	95cf003c036dd95000ab80ca6c680dab2e3ca092
+GH_COMMIT =	95cf003c036dd95000ab80ca6c680dab2e3ca092
 
 MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
 
-# GPL-3
+# GPLv3
 PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	mail/neomutt \
