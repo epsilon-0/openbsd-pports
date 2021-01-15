@@ -1,0 +1,16 @@
+$OpenBSD$
+
+use ftp instead of wget
+
+Index: pram
+--- pram.orig
++++ pram
+@@ -236,7 +236,7 @@ main() {
+ 				;;
+ 		esac
+ 		if [[ -n ${pr} ]]; then
+-			wget -O "${tempdir}/all.patch" "${pr}" || die "Fetching patch failed"
++			ftp -o "${tempdir}/all.patch" "${pr}" || die "Fetching patch failed"
+ 		fi
+ 		git mailsplit --keep-cr -o"${tempdir}" "${tempdir}/all.patch" >/dev/null ||
+ 			die "Splitting patches failed"
