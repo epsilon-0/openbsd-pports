@@ -1,0 +1,3 @@
+Provides a build-manpage command which can create
+a standard manpage from parsing the argparse object
+in python code.

@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v$
+bin/argparse-manpage
+lib/python${MODPY_VERSION}/site-packages/argparse_manpage-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/argparse_manpage-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/argparse_manpage-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/argparse_manpage-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/argparse_manpage-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/argparse_manpage-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/build_manpages/
+lib/python${MODPY_VERSION}/site-packages/build_manpages/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/build_manpages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/build_manpages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/build_manpages/${MODPY_PYCACHE}build_manpage.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/build_manpages/${MODPY_PYCACHE}build_manpages.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/build_manpages/${MODPY_PYCACHE}manpage.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/build_manpages/build_manpage.py
+lib/python${MODPY_VERSION}/site-packages/build_manpages/build_manpages.py
+lib/python${MODPY_VERSION}/site-packages/build_manpages/cli/
+lib/python${MODPY_VERSION}/site-packages/build_manpages/cli/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/build_manpages/cli/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/build_manpages/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/build_manpages/cli/${MODPY_PYCACHE}hack.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/build_manpages/cli/hack.py
+lib/python${MODPY_VERSION}/site-packages/build_manpages/manpage.py
+@man man/man1/argparse-manpage.1
