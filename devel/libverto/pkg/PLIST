@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v$
+include/verto-glib.h
+include/verto-libev.h
+include/verto-module.h
+include/verto.h
+@static-lib lib/libverto-glib.a
+lib/libverto-glib.la
+@lib lib/libverto-glib.so.${LIBverto-glib_VERSION}
+@static-lib lib/libverto-libev.a
+lib/libverto-libev.la
+@lib lib/libverto-libev.so.${LIBverto-libev_VERSION}
+@static-lib lib/libverto.a
+lib/libverto.la
+@lib lib/libverto.so.${LIBverto_VERSION}
+lib/pkgconfig/libverto-glib.pc
+lib/pkgconfig/libverto-libev.pc
+lib/pkgconfig/libverto.pc
