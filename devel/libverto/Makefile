@@ -33,6 +33,6 @@ CONFIGURE_ENV +=	CFLAGS="-I${LOCALBASE}/include/" \
 			LDFLAGS="-L${LOCALBASE}/lib/"
 
 do-test:
-	cd ${WRKSRC} && ${MAKE_PROGRAM} -C tests check
+	cd ${WRKSRC} && env -i ${MAKE_PROGRAM} -C tests check
 
 .include <bsd.port.mk>
