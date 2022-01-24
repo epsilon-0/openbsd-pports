@@ -1,0 +1,18 @@
+
+[source."https://github.com/SergioBenitez/Devise.git"]
+git = "https://github.com/SergioBenitez/Devise.git"
+rev = "e58b3ac9a"
+replace-with = "vendored-sources"
+
+[source."https://github.com/SergioBenitez/Rocket"]
+git = "https://github.com/SergioBenitez/Rocket"
+rev = "263e39b5b429de1913ce7e3036575a7b4d88b6d7"
+replace-with = "vendored-sources"
+
+[source."https://github.com/jjlin/job_scheduler"]
+git = "https://github.com/jjlin/job_scheduler"
+rev = "ee023418dbba2bfe1e30a5fd7d937f9e33739806"
+replace-with = "vendored-sources"
+
+[source.vendored-sources]
+directory = "${WRKSRC}/myvendordir"
