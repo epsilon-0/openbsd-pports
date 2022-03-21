@@ -1,12 +1,6 @@
-
-[source."https://github.com/SergioBenitez/Devise.git"]
-git = "https://github.com/SergioBenitez/Devise.git"
-rev = "e58b3ac9a"
-replace-with = "vendored-sources"
-
 [source."https://github.com/SergioBenitez/Rocket"]
 git = "https://github.com/SergioBenitez/Rocket"
-rev = "263e39b5b429de1913ce7e3036575a7b4d88b6d7"
+rev = "8cae077ba1d54b92cdef3e171a730b819d5eeb8e"
 replace-with = "vendored-sources"
 
 [source."https://github.com/jjlin/job_scheduler"]
