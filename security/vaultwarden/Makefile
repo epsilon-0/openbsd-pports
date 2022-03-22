@@ -1,4 +1,4 @@
-# $OpenBSD$
+BROKEN-sparc64 =        ring-0.16.20 does not build on sparc64
 
 COMMENT =		unofficial bitwarden compatible server
 
@@ -11,7 +11,10 @@ CATEGORIES =		security
 # GPL-3.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c c++abi pthread
+FLAVORS =		mysql postgresql
+FLAVOR ?=
+
+WANTLIB +=		c c++abi crypto m pthread ssl
 
 MASTER_SITES7 =		https://files.bsd.ac/openbsd-distfiles/
 DISTFILES +=		vaultwarden-${GH_TAGNAME}.vendor.tgz:7
@@ -25,16 +28,32 @@ CONFIGURE_STYLE =	cargo
 
 SEPARATE_BUILD =	Yes
 
-SUBST_VARS +=		WRKSRC
+RUN_DEPENDS =		www/vaultwarden-web
+
+MODCARGO_CRATES_SQLITE3_BUNDLED = Yes
+MODCARGO_FEATURES =	sqlite
+.if ${FLAVOR:Mmysql}
+MODCARGO_FEATURES +=	mysql
+WANTLIB +=		mariadb
+LIB_DEPENDS +=		databases/mariadb
+.endif
+.if ${FLAVOR:Mpostgresql}
+MODCARGO_FEATURES +=	postgresql
+WANTLIB +=		pq
+LIB_DEPENDS +=		databases/postgresql
+.endif
+
+SUBST_VARS +=		WRKSRC VARBASE
 
 post-configure:
 	mv ${WRKDIR}/myvendordir ${WRKSRC}
 	${SUBST_CMD} -m 644 -c ${FILESDIR}/config.vendor ${WRKDIR}/config.vendor
 	cat ${WRKDIR}/config.vendor >> ${WRKDIR}/.cargo/config
 
-MODCARGO_FEATURES =	sqlite
-
-MODCARGO_CRATES_SQLITE3_BUNDLED = Yes
+do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/vaultwarden
+	${INSTALL_DATA} ${WRKSRC}/.env.template ${PREFIX}/share/doc/vaultwarden
+	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/vaultwarden ${PREFIX}/bin/
 
 .include "crates.inc"
 
