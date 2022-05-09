@@ -1,0 +1,11 @@
+@sample /etc/
+@sample /etc/jitsi/
+@sample /etc/jitsi/jicofo/
+share/java/
+share/java/classes/
+share/java/classes/jicofo.jar
+share/jicofo/
+share/jicofo/jicofo.conf
+@sample /etc/jitsi/jicofo/jicofo.conf
+share/jicofo/lib/
+share/jicofo/lib/logging.properties

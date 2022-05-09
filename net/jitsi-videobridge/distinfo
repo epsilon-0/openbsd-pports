@@ -1,2 +1,4 @@
-SHA256 (jitsi-meet_4468.tar.gz) = khCOmdXK57YPRGI2FvD5KNG1PgdCaj+m4A1JkpzZhsM=
-SIZE (jitsi-meet_4468.tar.gz) = 277225
+SHA256 (jitsi-videobridge-2.1.634.tar.gz) = Qfz74IiiGkZVD0fmH7Gy8xdAgbwATN9Wc+v8K5esD0Q=
+SHA256 (jitsi-videobridge-deps-2.1.634.tgz) = REm9++hBZ5Du9NeKbTRSiPhiaHQX6N0VCS3hQVKvCdE=
+SIZE (jitsi-videobridge-2.1.634.tar.gz) = 383817
+SIZE (jitsi-videobridge-deps-2.1.634.tgz) = 293279523
