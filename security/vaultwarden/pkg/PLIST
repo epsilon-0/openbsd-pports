@@ -1,8 +1,0 @@
-@rcscript ${RCDIR}/vaultwarden
-@bin bin/vaultwarden
-share/doc/vaultwarden/
-share/doc/vaultwarden/.env.template
-@owner _vaultwarden
-@group _vaultwarden
-@sample /var/vaultwarden/.env
-@sample /var/vaultwarden/data/
