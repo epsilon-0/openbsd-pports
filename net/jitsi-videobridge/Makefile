@@ -2,14 +2,14 @@ COMMENT =	WebRTC compatible video router for jitsi
 
 CATEGORIES =	net
 
-VERSION =	2.1.634
+VERSION =	2.0.7648
 PKGNAME =	jitsi-videobridge-${VERSION}
 
 GH_ACCOUNT =	jitsi
 GH_PROJECT =	jitsi-videobridge
-GH_COMMIT =	ff8609adbe170ae612dc43cf363ba43708ab3fb3
+GH_COMMIT =	42bc1b9986b375e4e9d5044585f6bd0604bf8d25
 
-DISTFILES +=	jitsi-videobridge-${VERSION}{ff8609adbe170ae612dc43cf363ba43708ab3fb3}${EXTRACT_SUFX}
+DISTFILES +=	jitsi-videobridge-${VERSION}{${GH_COMMIT}}${EXTRACT_SUFX}
 
 # vendor maven dependencies
 MASTER_SITES7 =	https://files.bsd.ac/openbsd-distfiles/
@@ -22,7 +22,7 @@ PERMIT_PACKAGE =	Yes
 NO_TEST =	Yes
 
 MODULES =	java
-MODJAVA_VER =	1.8+
+MODJAVA_VER =	11
 
 BUILD_DEPENDS =	devel/maven
 
