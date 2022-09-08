@@ -2,12 +2,12 @@ COMMENT =	Server side focus component used in Jitsi Meet conferences
 
 CATEGORIES =	net
 
-VERSION =	1.0.862
+VERSION =	2.0.7648
 PKGNAME =	jicofo-${VERSION}
 
 GH_ACCOUNT =	jitsi
 GH_PROJECT =	jicofo
-GH_TAGNAME =	jitsi-meet_7001
+GH_TAGNAME =	jitsi-meet_7648
 
 DISTFILES +=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -22,7 +22,7 @@ PERMIT_PACKAGE =	Yes
 NO_TEST =	Yes
 
 MODULES =	java
-MODJAVA_VER =	1.8+
+MODJAVA_VER =	11
 
 BUILD_DEPENDS =	devel/maven
 
