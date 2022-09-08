@@ -2,7 +2,7 @@ COMMENT =	Web files for Jitsi Meet
 
 CATEGORIES =	www
 
-VERSION =	1.0.6088
+VERSION =	1.0.6542
 MASTER_SITES =	https://download.jitsi.org/jitsi-meet/src/
 PKGNAME =	jitsi-meet-${VERSION}
 DISTNAME =	${PKGNAME}
