@@ -11,6 +11,7 @@ fi
 : ${JICOFO_CONF:=${SYSCONFDIR}/jicofo/jicofo.conf}
 : ${JICOFO_LOG_CONFIG:=${TRUEPREFIX}/share/jicofo/lib/logging.properties}
 : ${JICOFO_TRUSTSTORE:=${SYSCONFDIR}/ssl/jicofo-key.store}
+: ${JICOFO_TRUSTSTORE_PASSWORD:='CHANGE_ME'}
 : ${JICOFO_MAXMEM:=3G}
 : ${JICOFO_DHKEYSIZE:=2048}
 
@@ -25,6 +26,6 @@ exec ${JAVA} -Xmx${JICOFO_MAXMEM} -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPa
 	-Djava.util.logging.config.file=${JICOFO_LOG_CONFIG} \
 	-Djdk.tls.ephemeralDHKeySize=${JICOFO_DHKEYSIZE} \
 	-Djavax.net.ssl.trustStore=${JICOFO_TRUSTSTORE} \
-	${JICOFO_TRUSTSTORE_PASSWORD:- -Djavax.net.ssl.trustStorePassword=${JICOFO_TRUSTSTORE_PASSWORD}} \
+	-Djavax.net.ssl.trustStorePassword=${JICOFO_TRUSTSTORE_PASSWORD} \
 	${JAVA_SYS_PROPS} \
 	-cp ${cp} ${mainClass} ${@}
