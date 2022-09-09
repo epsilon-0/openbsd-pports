@@ -34,10 +34,15 @@ do-build:
 		env -i ${MAKE_ENV} mvn ${MAVEN_REPO} ${MAVEN_ARGS} package
 
 do-install:
-	${INSTALL_DATA_DIR} ${MODJAVA_JAR_DIR} # ${PREFIX}${SYSCONFDIR}/jitsi/videobridge
+	${INSTALL_DATA_DIR} ${PREFIX}/bin ${PREFIX}/share/jvb/lib/ ${MODJAVA_JAR_DIR}
+	cp ${FILESDIR}/jvb.sh ${FILESDIR}/jvb.in.sh ${FILESDIR}/jvb.conf ${FILESDIR}/sip-communicator.properties ${WRKSRC}
+	${SUBST_CMD} ${WRKSRC}/jvb.sh ${WRKSRC}/jvb.in.sh
+	${INSTALL_PROGRAM} ${WRKSRC}/jvb.sh ${PREFIX}/bin/jvb
+	${INSTALL_DATA} ${WRKSRC}/jvb.conf ${PREFIX}/share/jvb/
+	${INSTALL_DATA} ${WRKSRC}/jvb.in.sh ${PREFIX}/share/jvb/
+	${INSTALL_DATA} ${WRKSRC}/sip-communicator.properties ${PREFIX}/share/jvb/lib/
+	${INSTALL_DATA} ${WRKSRC}/jvb/lib/logging.properties ${PREFIX}/share/jvb/lib/
 	${INSTALL_DATA} ${WRKSRC}/jvb/target/jitsi-videobridge-2.1-SNAPSHOT-jar-with-dependencies.jar ${MODJAVA_JAR_DIR}/jitsi-videobridge.jar
-#	${INSTALL_DATA} ${FILESDIR}/jitsi-videobridge.conf ${PREFIX}/share/jitsi-videobridge/
-#	${INSTALL_DATA} ${WRKSRC}/jvb/lib/logging.properties ${PREFIX}/share/jitsi-videobridge/lib/
 
 
 .include <bsd.port.mk>
