@@ -27,6 +27,8 @@ MODJAVA_VER =	11
 
 BUILD_DEPENDS =	devel/maven
 
+RUN_DEPENDS =	java/javaPathHelper
+
 MAVEN_ARGS=	--offline -PbuildFatJar -DskipTests -Dassembly.skipAssembly=false
 MAVEN_REPO=	-Dmaven.repo.local=${WRKDIR}/m2
 

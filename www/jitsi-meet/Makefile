@@ -17,8 +17,8 @@ PERMIT_PACKAGE =	Yes
 NO_BUILD =	Yes
 NO_TEST =	Yes
 
-PREFIX =	${VARBASE}
-INSTDIR =	${PREFIX}/www/
+PREFIX =	/var
+INSTDIR =	${PREFIX}/www
 
 post-extract:
 	mv ${WRKDIR}/jitsi-meet/config.js ${WRKDIR}/jitsi-meet/config.js.sample
@@ -27,5 +27,6 @@ post-extract:
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
 	cp -R ${WRKDIR}/jitsi-meet/ ${INSTDIR}
+
 
 .include <bsd.port.mk>
