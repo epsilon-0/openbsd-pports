@@ -8,7 +8,7 @@ PKGNAME =	jitsi-meet-${VERSION}
 DISTNAME =	${PKGNAME}
 EXTRACT_SUFX =	.tar.bz2
 
-MAINTAINER =	Philipp Buehler <pb-openbsd@sysfive.com>,
+MAINTAINER =	Philipp Buehler <pb-openbsd@sysfive.com>, \
 		Aisha Tammy <openbsd@aisha.cc>
 
 # Apache-2.0

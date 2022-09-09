@@ -15,7 +15,7 @@ DISTFILES +=	${DISTNAME}${EXTRACT_SUFX}
 MASTER_SITES7 =	https://files.bsd.ac/openbsd-distfiles/
 DISTFILES +=	jicofo-deps-${VERSION}.tgz:7
 
-MAINTAINER =	Philipp Buehler <pb-openbsd@sysfive.com>,
+MAINTAINER =	Philipp Buehler <pb-openbsd@sysfive.com>, \
 		Aisha Tammy <openbsd@aisha.cc>
 # Apache-2.0
 PERMIT_PACKAGE =	Yes
