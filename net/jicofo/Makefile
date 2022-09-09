@@ -34,8 +34,12 @@ do-build:
 		env -i ${MAKE_ENV} mvn ${MAVEN_REPO} ${MAVEN_ARGS} package
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/jicofo/lib ${MODJAVA_JAR_DIR} ${PREFIX}${SYSCONFDIR}/jitsi/jicofo
-	${INSTALL_DATA} ${FILESDIR}/jicofo.conf ${PREFIX}/share/jicofo/
+	${INSTALL_DATA_DIR} ${PREFIX}/bin ${PREFIX}/share/jicofo/lib ${MODJAVA_JAR_DIR}
+	cp ${FILESDIR}/jicofo.sh ${FILESDIR}/jicofo.in.sh ${FILESDIR}/jicofo.conf ${WRKSRC}
+	${SUBST_CMD} ${WRKSRC}/jicofo.sh ${WRKSRC}/jicofo.in.sh
+	${INSTALL_PROGRAM} ${WRKSRC}/jicofo.sh ${PREFIX}/bin/jicofo
+	${INSTALL_DATA} ${WRKSRC}/jicofo.conf ${PREFIX}/share/jicofo/
+	${INSTALL_DATA} ${WRKSRC}/jicofo.in.sh ${PREFIX}/share/jicofo/
 	${INSTALL_DATA} ${WRKSRC}/lib/logging.properties ${PREFIX}/share/jicofo/lib/
 	${INSTALL_DATA} ${WRKSRC}/target/jicofo-1.1-SNAPSHOT-jar-with-dependencies.jar ${MODJAVA_JAR_DIR}/jicofo.jar
 

@@ -1,0 +1,7 @@
+JICOFO_CONF=${SYSCONFDIR}/jicofo/jicofo.conf
+JICOFO_LOG_CONFIG=${TRUEPREFIX}/share/jicofo/lib/logging.properties
+JICOFO_TRUSTSTORE=${SYSCONFDIR}/ssl/jicofo-key.store
+#JICOFO_TRUSTSTORE_PASSWORD=""
+JICOFO_MAXMEM=3G
+JICOFO_DHKEYSIZE=2048
+logging_config=
