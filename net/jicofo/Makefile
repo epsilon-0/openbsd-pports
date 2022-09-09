@@ -43,4 +43,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/logging.properties ${PREFIX}/share/jicofo/lib/
 	${INSTALL_DATA} ${WRKSRC}/target/jicofo-1.1-SNAPSHOT-jar-with-dependencies.jar ${MODJAVA_JAR_DIR}/jicofo.jar
 
+
 .include <bsd.port.mk>
