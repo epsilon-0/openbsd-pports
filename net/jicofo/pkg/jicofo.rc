@@ -1,6 +1,7 @@
 #!/bin/ksh
 
 daemon="${TRUEPREFIX}/bin/jicofo"
+daemon_logger="daemon.info"
 
 . /etc/rc.d/rc.subr
 
