@@ -1,0 +1,10 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/jicofo"
+
+. /etc/rc.d/rc.subr
+
+pexp="$(${LOCALBASE}/bin/javaPathHelper -c jicofo) .*-cp ${TRUEPREFIX}/share/java/classes/jicofo.jar.* ${daemon_flags}"
+
+rc_reload=NO
+rc_cmd $1

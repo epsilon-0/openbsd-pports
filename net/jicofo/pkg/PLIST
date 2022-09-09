@@ -1,3 +1,4 @@
+@rcscript ${RCDIR}/jicofo
 bin/jicofo
 @sample ${SYSCONFDIR}/jicofo/
 share/java/
