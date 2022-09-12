@@ -40,7 +40,7 @@ do-build:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/bin ${PREFIX}/share/jicofo/lib ${MODJAVA_JAR_DIR}
 	${SUBST_PROGRAM} ${FILESDIR}/jicofo.sh ${PREFIX}/bin/jicofo
-	${SUBST_DATA} ${FILESDIR}/jicofo.in.sh ${PREFIX}/share/jicofo/jicofo.in.sh \
+	${SUBST_DATA} ${FILESDIR}/jicofo.in.sh ${PREFIX}/share/jicofo/jicofo.in.sh.sample \
 	    ${FILESDIR}/jicofo.conf ${PREFIX}/share/jicofo/jicofo.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/lib/logging.properties \
 	    ${PREFIX}/share/jicofo/lib/logging.properties.sample
