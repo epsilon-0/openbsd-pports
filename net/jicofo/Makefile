@@ -1,4 +1,4 @@
-COMMENT =	Server side focus component used in Jitsi Meet conferences
+COMMENT =	server-side focus component used in Jitsi Meet conferences
 
 CATEGORIES =	net
 
@@ -9,7 +9,7 @@ GH_ACCOUNT =	jitsi
 GH_PROJECT =	jicofo
 GH_TAGNAME =	jitsi-meet_7648
 
-DISTFILES +=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES +=	${GH_DISTFILE}
 
 # vendor maven dependencies
 MASTER_SITES7 =	https://files.bsd.ac/openbsd-distfiles/
@@ -17,6 +17,7 @@ DISTFILES +=	jicofo-deps-${VERSION}.tgz:7
 
 MAINTAINER =	Philipp Buehler <pb-openbsd@sysfive.com>, \
 		Aisha Tammy <openbsd@aisha.cc>
+
 # Apache-2.0
 PERMIT_PACKAGE =	Yes
 
@@ -34,7 +35,7 @@ MAVEN_REPO=	-Dmaven.repo.local=${WRKDIR}/m2
 
 do-build:
 	cd ${WRKSRC} && \
-		env -i ${MAKE_ENV} mvn ${MAVEN_REPO} ${MAVEN_ARGS} package
+		${SETENV} ${MAKE_ENV} mvn ${MAVEN_REPO} ${MAVEN_ARGS} package
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/bin ${PREFIX}/share/jicofo/lib ${MODJAVA_JAR_DIR}
@@ -45,6 +46,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/jicofo.in.sh ${PREFIX}/share/jicofo/
 	${INSTALL_DATA} ${WRKSRC}/lib/logging.properties ${PREFIX}/share/jicofo/lib/
 	${INSTALL_DATA} ${WRKSRC}/target/jicofo-1.1-SNAPSHOT-jar-with-dependencies.jar ${MODJAVA_JAR_DIR}/jicofo.jar
-
 
 .include <bsd.port.mk>
