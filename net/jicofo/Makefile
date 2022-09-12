@@ -39,12 +39,11 @@ do-build:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/bin ${PREFIX}/share/jicofo/lib ${MODJAVA_JAR_DIR}
-	cp ${FILESDIR}/jicofo.sh ${FILESDIR}/jicofo.in.sh ${FILESDIR}/jicofo.conf ${WRKSRC}
-	${SUBST_CMD} ${WRKSRC}/jicofo.sh ${WRKSRC}/jicofo.in.sh
-	${INSTALL_PROGRAM} ${WRKSRC}/jicofo.sh ${PREFIX}/bin/jicofo
-	${INSTALL_DATA} ${WRKSRC}/jicofo.conf ${PREFIX}/share/jicofo/
-	${INSTALL_DATA} ${WRKSRC}/jicofo.in.sh ${PREFIX}/share/jicofo/
-	${INSTALL_DATA} ${WRKSRC}/lib/logging.properties ${PREFIX}/share/jicofo/lib/
+	${SUBST_PROGRAM} ${FILESDIR}/jicofo.sh ${PREFIX}/bin/jicofo
+	${SUBST_DATA} ${FILESDIR}/jicofo.in.sh ${PREFIX}/share/jicofo/jicofo.in.sh \
+	    ${FILESDIR}/jicofo.conf ${PREFIX}/share/jicofo/jicofo.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/lib/logging.properties \
+	    ${PREFIX}/share/jicofo/lib/logging.properties.sample
 	${INSTALL_DATA} ${WRKSRC}/target/jicofo-1.1-SNAPSHOT-jar-with-dependencies.jar ${MODJAVA_JAR_DIR}/jicofo.jar
 
 .include <bsd.port.mk>

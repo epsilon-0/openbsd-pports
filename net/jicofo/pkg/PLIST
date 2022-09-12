@@ -5,9 +5,10 @@ share/java/
 share/java/classes/
 share/java/classes/jicofo.jar
 share/jicofo/
-share/jicofo/jicofo.conf
+share/jicofo/jicofo.conf.sample
 @sample ${SYSCONFDIR}/jicofo/jicofo.conf
 share/jicofo/jicofo.in.sh
 @sample ${SYSCONFDIR}/jicofo/jicofo.in.sh
 share/jicofo/lib/
-share/jicofo/lib/logging.properties
+share/jicofo/lib/logging.properties.sample
+@sample share/jicofo/lib/logging.properties
