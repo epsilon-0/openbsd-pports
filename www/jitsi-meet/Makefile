@@ -1,11 +1,10 @@
-COMMENT =	Web files for Jitsi Meet
+COMMENT =	web files for Jitsi Meet
 
 CATEGORIES =	www
 
 VERSION =	1.0.6542
 MASTER_SITES =	https://download.jitsi.org/jitsi-meet/src/
-PKGNAME =	jitsi-meet-${VERSION}
-DISTNAME =	${PKGNAME}
+DISTNAME =	jitsi-meet-${VERSION}
 EXTRACT_SUFX =	.tar.bz2
 
 MAINTAINER =	Philipp Buehler <pb-openbsd@sysfive.com>, \
@@ -27,6 +26,5 @@ post-extract:
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
 	cp -R ${WRKDIR}/jitsi-meet/ ${INSTDIR}
-
 
 .include <bsd.port.mk>
