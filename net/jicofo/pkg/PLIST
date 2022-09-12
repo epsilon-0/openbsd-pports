@@ -1,14 +1,37 @@
+@newgroup _jicofo:886
+@newuser _jicofo:886:886::JiCoFo Daemon:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/jicofo
 bin/jicofo
+@mode 750
+@owner _jicofo
+@group _jicofo
 @sample ${SYSCONFDIR}/jicofo/
+@mode
+@owner
+@group
 share/java/
 share/java/classes/
 share/java/classes/jicofo.jar
 share/jicofo/
 share/jicofo/jicofo.conf.sample
+@mode 640
+@owner _jicofo
+@group _jicofo
 @sample ${SYSCONFDIR}/jicofo/jicofo.conf
+@mode
+@owner
+@group
 share/jicofo/jicofo.in.sh.sample
+@mode 640
+@owner _jicofo
+@group _jicofo
 @sample ${SYSCONFDIR}/jicofo/jicofo.in.sh
+@mode
+@owner
+@group
 share/jicofo/lib/
 share/jicofo/lib/logging.properties.sample
+@mode 640
+@owner _jicofo
+@group _jicofo
 @sample share/jicofo/lib/logging.properties

@@ -2,6 +2,7 @@
 
 daemon="${TRUEPREFIX}/bin/jicofo"
 daemon_logger="daemon.info"
+daemon_user="_jicofo"
 
 . /etc/rc.d/rc.subr
 

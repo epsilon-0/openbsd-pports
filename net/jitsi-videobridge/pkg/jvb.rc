@@ -2,6 +2,7 @@
 
 daemon="${TRUEPREFIX}/bin/jvb"
 daemon_logger="daemon.info"
+daemon_user="_jvb"
 
 . /etc/rc.d/rc.subr
 
