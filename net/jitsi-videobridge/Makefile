@@ -38,13 +38,11 @@ do-build:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/bin ${PREFIX}/share/jvb/lib/ ${MODJAVA_JAR_DIR}
-	cp ${FILESDIR}/jvb.sh ${FILESDIR}/jvb.in.sh ${FILESDIR}/jvb.conf ${FILESDIR}/sip-communicator.properties ${WRKSRC}
-	${SUBST_CMD} ${WRKSRC}/jvb.sh ${WRKSRC}/jvb.in.sh
-	${INSTALL_PROGRAM} ${WRKSRC}/jvb.sh ${PREFIX}/bin/jvb
-	${INSTALL_DATA} ${WRKSRC}/jvb.conf ${PREFIX}/share/jvb/
-	${INSTALL_DATA} ${WRKSRC}/jvb.in.sh ${PREFIX}/share/jvb/
-	${INSTALL_DATA} ${WRKSRC}/sip-communicator.properties ${PREFIX}/share/jvb/lib/
-	${INSTALL_DATA} ${WRKSRC}/jvb/lib/logging.properties ${PREFIX}/share/jvb/lib/
+	${SUBST_PROGRAM} ${FILESDIR}/jvb.sh ${PREFIX}/bin/jvb
+	${SUBST_DATA} ${FILESDIR}/jvb.in.sh ${PREFIX}/share/jvb/jvb.in.sh.sample \
+	    ${FILESDIR}/jvb.conf ${PREFIX}/share/jvb/jvb.conf.sample \
+	    ${FILESDIR}/sip-communicator.properties ${PREFIX}/share/jvb/lib/sip-communicator.properties.sample
+	${INSTALL_DATA} ${WRKSRC}/jvb/lib/logging.properties ${PREFIX}/share/jvb/lib/logging.properties.sample
 	${INSTALL_DATA} ${WRKSRC}/jvb/target/jitsi-videobridge-2.1-SNAPSHOT-jar-with-dependencies.jar ${MODJAVA_JAR_DIR}/jitsi-videobridge.jar
 
 .include <bsd.port.mk>

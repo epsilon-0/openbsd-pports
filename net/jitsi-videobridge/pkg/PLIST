@@ -5,11 +5,12 @@ share/java/
 share/java/classes/
 share/java/classes/jitsi-videobridge.jar
 share/jvb/
-share/jvb/jvb.conf
+share/jvb/jvb.conf.sample
 @sample ${SYSCONFDIR}/jvb/jvb.conf
-share/jvb/jvb.in.sh
+share/jvb/jvb.in.sh.sample
 @sample ${SYSCONFDIR}/jvb/jvb.in.sh
 share/jvb/lib/
-share/jvb/lib/logging.properties
-share/jvb/lib/sip-communicator.properties
+share/jvb/lib/logging.properties.sample
+@sample share/jvb/lib/logging.properties
+share/jvb/lib/sip-communicator.properties.sample
 @sample ${SYSCONFDIR}/jvb/sip-communicator.properties
