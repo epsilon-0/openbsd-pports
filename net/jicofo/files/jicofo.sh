@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/ksh
 
 if [[ "$1" == "--help"  || $# -lt 1 ]]; then
     echo -e "Usage:"
@@ -14,8 +14,6 @@ fi
 : ${JICOFO_TRUSTSTORE_PASSWORD:='CHANGE_ME'}
 : ${JICOFO_MAXMEM:=3G}
 : ${JICOFO_DHKEYSIZE:=2048}
-
-#export JAVA_SYS_PROPS="${JAVA_SYS_PROPS} -Djavax.net.ssl.trustStore=/etc/ssl/jicofo-key.store -Djavax.net.ssl.trustStorePassword=jitsicool -Dconfig.file=/etc/jicofo.conf"
 
 JAVA=$(${LOCALBASE}/bin/javaPathHelper -c jicofo)
 mainClass="org.jitsi.jicofo.Main"

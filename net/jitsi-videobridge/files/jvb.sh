@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/ksh
 
 [[ -r ${SYSCONFDIR}/jvb/jvb.in.sh ]] && . ${SYSCONFDIR}/jvb/jvb.in.sh
 
