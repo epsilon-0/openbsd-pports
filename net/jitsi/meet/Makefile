@@ -1,6 +1,6 @@
 COMMENT =	web files for Jitsi Meet
 
-CATEGORIES =	www
+CATEGORIES =	net www
 
 VERSION =	1.0.6542
 MASTER_SITES =	https://download.jitsi.org/jitsi-meet/src/
