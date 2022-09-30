@@ -25,8 +25,6 @@ MODJAVA_VER =	11
 
 WANTLIB =	crypto
 
-BUILD_DEPENDS =	net/jitsi-videobridge
-
 # upstream cmake file is _bad_
 CONFIGURE_ARGS+= -DCMAKE_INSTALL_PREFIX=${PREFIX}/lib \
 		 -DJITSI_SRTP_LIBSSL_VERSION=1.1
@@ -40,7 +38,7 @@ pre-build:
 
 do-test:
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} mvn ${MAVEN_REPO} ${MAVEN_ARGS} test
+		${SETENV} ${MAKE_ENV} LD_LIBRARY_PATH=${WRKBUILD} mvn ${MAVEN_REPO} ${MAVEN_ARGS} test
 
 
 .include <bsd.port.mk>

@@ -4,7 +4,7 @@ CATEGORIES =	net
 
 VERSION =	2.0.7648
 DISTNAME =	jitsi-videobridge-${VERSION}
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	jitsi
 GH_PROJECT =	jitsi-videobridge

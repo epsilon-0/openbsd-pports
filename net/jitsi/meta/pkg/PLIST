@@ -1,0 +1,4 @@
+share/doc/pkg-readmes/${PKGSTEM}
+share/jitsi/
+share/jitsi/nginx.conf.sample
+share/jitsi/prosody.cfg.lua.sample

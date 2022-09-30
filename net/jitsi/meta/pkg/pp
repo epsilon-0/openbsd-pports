@@ -1,0 +1,130 @@
+4a5,6
+> (GENERAL DESCRIPTION HERE?)
+> 
+11,13c13,15
+<  * ${SYSCONFDIR}/jvb/jvb.in.sh - default command line parameters and their values
+<  * ${SYSCONFDIR}/jvb/jvb.conf - default config file
+<  * ${SYSCONFDIR}/jvb/sip-communicator.properties - config file for running behind a NAT
+---
+>     * ${SYSCONFDIR}/jvb/jvb.in.sh - default command line parameters and their values
+>     * ${SYSCONFDIR}/jvb/jvb.conf - default config file
+>     * ${SYSCONFDIR}/jvb/sip-communicator.properties - config file for running behind a NAT
+16,17c18,19
+<  * ${SYSCONFDIR}/jicofo/jicofo.in.sh - default command line parameters and their values
+<  * ${SYSCONFDIR}/jicofo/jicofo.conf - default config file
+---
+>     * ${SYSCONFDIR}/jicofo/jicofo.in.sh - default command line parameters and their values
+>     * ${SYSCONFDIR}/jicofo/jicofo.conf - default config file
+20,21c22,23
+<  * ${LOCALSTATEDIR}/www/jitsi-meet/ - default location of files
+<  * ${LOCALSTATEDIR}/www/jitsi-meet/config.js - default config file
+---
+>     * ${LOCALSTATEDIR}/www/jitsi-meet/ - default location of files
+>     * ${LOCALSTATEDIR}/www/jitsi-meet/config.js - default config file
+24c26
+<  * ${SYSCONFDIR}/nginx/ - default config files
+---
+>     * ${SYSCONFDIR}/nginx/ - default config files
+27,28c29,30
+<  * ${SYSCONFDIR}/prosody/prosody.cfg.lua - default config file
+<  * ${LOCALSTATEDIR}/prosody/ - default runtime files
+---
+>     * ${SYSCONFDIR}/prosody/prosody.cfg.lua - default config file
+>     * ${LOCALSTATEDIR}/prosody/ - default runtime files
+33a36
+> 
+42c45
+< ---------
+---
+> ========
+46,48c49,51
+< * ${JAVA_TS_PASS}
+< * ${JVB_COMP_PASS}
+< * ${FOCUS_COMP_PASS}
+---
+>     ${JAVA_TS_PASS}
+>     ${JVB_COMP_PASS}
+>     ${FOCUS_COMP_PASS}
+51c54
+< -----------------
+---
+> =================
+55,58c58,61
+< * nginx: TCP 80, 443
+< * prosody: TCP 5000, 5222, 5269, 5280, 5281, 5347, 5582
+< * jicofo: TCP 8888
+< * jvb: TCP 8080, UDP 10000
+---
+>     * nginx: TCP 80, 443
+>     * prosody: TCP 5000, 5222, 5269, 5280, 5281, 5347, 5582
+>     * jicofo: TCP 8888
+>     * jvb: TCP 8080, UDP 10000
+60,61c63
+< Only a few ports, TCP 80, 443 and UDP 10000, are to be exposed.
+< A possible set of pf.conf rules that can be used is:
+---
+> Only a few ports, TCP 80, 443 and UDP 10000, are to be exposed. A possible set of pf.conf rules that can be used is:
+67c69
+< ------------------------
+---
+> ========================
+77c79
+< -------------------
+---
+> ===================
+82c84
+< ---------------------
+---
+> =====================
+91c93
+< # prosodyctl cert generate auth.jitsi.example.com
+---
+>     $ prosodyctl cert generate auth.jitsi.example.com
+97c99
+< # $(javaPathHelper -h jicofo)/bin/keytool -import -alias prosody -file ${LOCALSTATEDIR}/prosody/auth.jitsi.example.com -keystore ${LOCALSTATEDIR}/ssl/jitsi.store -storepass ${JAVA_TS_PASS}
+---
+>     $(javaPathHelper -h jicofo)/bin/keytool -import -alias prosody -file ${LOCALSTATEDIR}/prosody/auth.jitsi.example.com -keystore ${LOCALSTATEDIR}/ssl/jitsi.store -storepass ${JAVA_TS_PASS}
+101,102c103,104
+< # prosodyctl install --server=https://modules.prosody.im/rocks/ mod_client_proxy
+< # prosodyctl install --server=https://modules.prosody.im/rocks/ mod_roster_command
+---
+>     $ prosodyctl install --server=https://modules.prosody.im/rocks/ mod_client_proxy
+>     $ prosodyctl install --server=https://modules.prosody.im/rocks/ mod_roster_command
+106,107c108,109
+< # prosodyctl register focus auth.jitsi.example.com ${FOCUS_COMP_PASS}
+< # prosodyctl mod_roster_command subscribe focus.jitsi.example.com focus@auth.jitsi.example.com
+---
+>     $ prosodyctl register focus auth.jitsi.example.com ${FOCUS_COMP_PASS}
+>     $ prosodyctl mod_roster_command subscribe focus.jitsi.example.com focus@auth.jitsi.example.com
+110c112
+< ----------------------------
+---
+> ============================
+114c116
+< # rcctl set jicofo flags "--host=jitsi.example.com"
+---
+>     $ rcctl set jicofo flags "--host=jitsi.example.com"
+117c119
+< -----------------
+---
+> =================
+122c124
+< ------------------------
+---
+> ========================
+126,127c128,129
+< var config = {
+<   hosts: {
+---
+>     var config = {
+>     hosts: {
+130a133
+> 
+148c151
+< pkg_scripts=nginx prosody jicofo jvb
+---
+>     pkg_scripts=nginx prosody jicofo jvb
+155c158
+< Further steps to configure the setup can be found in the upstream documentation at https://jitsi.github.io/handbook/
+---
+> Further steps to configure the setup can be found in the upstream documentation at https://jitsi.github.io/handbook/.
