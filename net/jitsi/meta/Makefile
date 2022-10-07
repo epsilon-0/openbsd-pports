@@ -7,7 +7,7 @@ VERSION=	1.0
 MAINTAINER=	Philipp Buehler <pb-openbsd@sysfive.com>, \
 		Aisha Tammy <openbsd@aisha.cc>
 
-DISTNAME=	jitsi-meta-${VERSION}
+DISTNAME=	jitsi-${VERSION}
 DISTFILES=
 
 # ISC
