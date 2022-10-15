@@ -2,12 +2,12 @@ COMMENT =	prosody modules for Jitsi Meet
 
 CATEGORIES =	net
 
-VERSION =	2.0.7648
+VERSION =	2.0.7882
 PKGNAME =	jitsi-prosody-plugins-${VERSION}
 
 GH_ACCOUNT =	jitsi
 GH_PROJECT =	jitsi-meet
-GH_TAGNAME =	jitsi-meet_7648
+GH_TAGNAME =	jitsi-meet_7882
 
 MAINTAINER =	Philipp Buehler <pb-openbsd@sysfive.com>, \
 		Aisha Tammy <openbsd@aisha.cc>
@@ -22,7 +22,6 @@ RUN_DEPENDS =	net/prosody
 
 do-install:
 	mkdir -p ${PREFIX}/share/jitsi-prosody-plugins/token
-	cp ${WRKSRC}/resources/prosody-plugins/*.lua ${PREFIX}/share/jitsi-prosody-plugins
-	cp ${WRKSRC}/resources/prosody-plugins/token/*.lua ${PREFIX}/share/jitsi-prosody-plugins/token
+	cp -a ${WRKSRC}/resources/prosody-plugins/. ${PREFIX}/share/jitsi-prosody-plugins
 
 .include <bsd.port.mk>
