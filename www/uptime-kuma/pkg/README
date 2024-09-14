@@ -1,0 +1,27 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Start using PM2
+===============
+
+The recommended way of Uptime Kuma is by using PM2 which is available in ports
+and can be installed via pkg_add(1):
+
+    # pkg_add pm2
+    # rcctl start pm2
+
+The configuration file for PM2 should be edited to start uptime-kuma:
+
+    # cat ${SYSCONFDIR}/pm2/ecosystem.config.js
+    module.exports = {
+      apps : [
+        {
+          name: "uptime-kuma",
+          script: "server/server.js",
+          cwd: "${TRUEPREFIX}/libexec/uptime-kuma"
+        }
+      ]
+    }
+
+    # rcctl reload pm2

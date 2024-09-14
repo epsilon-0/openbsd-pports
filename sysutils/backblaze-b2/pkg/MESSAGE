@@ -1,0 +1,6 @@
+The b2 CLI utility is renamed to backblaze-b2 on OpenBSD, to avoid
+conflict with the Boost b2 utility.  Similary, the more specific
+version named utilities are renamed to backblaze-b2v3 and
+backblaze-b2v4.  If you wish to use the b2 CLI name (or have existing
+scripts which use it), you should create a symlink from b2 to
+/usr/local/bin/backblaze-b2.

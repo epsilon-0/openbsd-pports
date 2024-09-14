@@ -1,0 +1,17 @@
+To enable cloud-init on startup, put the following lines into
+rc.local(8):
+
+	/usr/local/lib/cloud-init/ds-identify
+
+	cloud-init init --local
+
+	cloud-init init
+
+	cloud-init modules --mode config
+
+	cloud-init modules --mode final
+
+Note that ds-identify is optional.
+On VM images, where the target cloud is known, a `ds-identify` run
+can be replaced with a concrete `datasources_list` entry in
+`/etc/cloud/cloud.cfg.d/`.

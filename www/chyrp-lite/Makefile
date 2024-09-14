@@ -1,26 +1,24 @@
-# $OpenBSD: $
-
 COMMENT =	ultra-lightweight blogging engine in PHP
 
-VERSION =	0.2021.01
-DISTNAME =	chyrp-lite-${VERSION}
-PKGNAME =	${DISTNAME:L}
+VERSION =	2024.03
+
+GH_ACCOUNT =	xenocrat
+GH_PROJECT =	chyrp-lite
+GH_TAGNAME =	v${VERSION}
+
 CATEGORIES =	www
+
 HOMEPAGE =	https://chyrplite.net/
 
-MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
+MAINTAINER =	Aisha Tammy <aisha@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
-GH_ACCOUNT =	xenocrat
-GH_PROJECT =	chyrp-lite
-GH_TAGNAME =	v${VERSION:S/0.//g}
+MODULES=	lang/php
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
-
-MODULES=	lang/php
 
 PREFIX =	${VARBASE}/www
 INSTDIR =	${PREFIX}/chyrp-lite
@@ -30,7 +28,7 @@ SUBST_VARS =	INSTDIR TINSTDIR
 RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-gd
 
 do-install:
-	cp -Rp ${WRKDIST} ${INSTDIR}
+	cp -a ${WRKSRC}/. ${INSTDIR}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>

@@ -1,0 +1,5 @@
+A2WSGI is a pure Python library to seamlessly convert WSGI app to
+ASGI app or ASGI app to WSGI app. A2WSGI depends only on the standard
+python library. A2WSGI does not accumulate the requested content
+or response content in the memory, so there is no worry about the
+increasing memory usage due to bufferred requests.

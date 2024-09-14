@@ -1,0 +1,11 @@
+Baize is a powerful and exquisite WSGI/ASGI framework/toolkit.
+Under the ASGI/WSGI protocol, the interface of the request
+object and the response object is almost the same, only need
+to add or delete await in the appropriate place. In addition,
+it should be noted that ASGI supports WebSocket but WSGI does not.
+- Type annotations as strict as possible (almost no Any)
+- Support range file response, server-sent event response
+- Support WebSocket (only ASGI)
+- WSGI, ASGI routing to combine any application like Django(wsgi),
+  Kuí(wsgi), Pyramid, Bottle, Flask or Django(asgi), Kuí(asgi),
+  Starlette, FastAPI, Sanic, Quart

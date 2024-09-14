@@ -1,0 +1,12 @@
+Index: tests/test_wsgi.py
+--- tests/test_wsgi.py.orig
++++ tests/test_wsgi.py
+@@ -95,7 +95,7 @@ def test_request_headers():
+         assert response.json() == {
+             "headers": {
+                 "host": "example.org",
+-                "accept-encoding": "gzip, deflate",
++                "accept-encoding": "gzip, deflate, br",
+                 "accept": "*/*",
+                 "connection": "keep-alive",
+             }

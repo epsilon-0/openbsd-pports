@@ -1,0 +1,22 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -50,9 +50,8 @@ py-win32 = "sys_platform == 'win32'"
+ [tool.mypy]
+ ignore_missing_imports = true
+ 
+-[tool.pdm]
++[tool.pdm.build]
+ includes = ["baize"]
+-build = "speedup.py"
+ 
+ [tool.pdm.scripts]
+ lint-ruff = "ruff {args}"
+@@ -95,5 +95,5 @@ test = [
+ ignore = ["F821"]
+ 
+ [build-system]
+-build-backend = "pdm.pep517.api"
+-requires = ["pdm-pep517"]
++build-backend = "pdm.backend"
++requires = ["pdm-backend"]

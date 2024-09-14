@@ -1,0 +1,16 @@
+Index: lib/rules/api.c
+--- lib/rules/api.c.orig
++++ lib/rules/api.c
+@@ -67,6 +67,12 @@ static int tag_names_default(void)
+ 	return ruledb_op(write, &key, &val, 1); // we got ENOENT, so simple write is OK
+ }
+ 
++int
++ffsll(long long mask)
++{
++	return (mask == 0 ? 0 : __builtin_ctzll(mask) + 1);
++}
++
+ int kr_rule_tag_add(const char *tag, kr_rule_tags_t *tagset)
+ {
+ 	ENSURE_the_rules;

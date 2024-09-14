@@ -1,0 +1,3 @@
+email-validator validates that a string is of the
+form name@example.com and optionally checks that
+the domain name is set up to receive email.

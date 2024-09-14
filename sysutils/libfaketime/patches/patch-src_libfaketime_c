@@ -1,0 +1,12 @@
+Index: src/libfaketime.c
+--- src/libfaketime.c.orig
++++ src/libfaketime.c
+@@ -79,7 +79,7 @@
+ #include <signal.h>
+ #endif
+ 
+-#include <sys/timeb.h>
++#include <sys/time.h>
+ #include <dlfcn.h>
+ 
+ #define BUFFERLEN   256

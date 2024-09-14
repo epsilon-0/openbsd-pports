@@ -1,0 +1,12 @@
+Index: tests/test_asgi.py
+--- tests/test_asgi.py.orig
++++ tests/test_asgi.py
+@@ -118,7 +118,7 @@ async def test_request_headers():
+         assert response.json() == {
+             "headers": {
+                 "host": "example.org",
+-                "accept-encoding": "gzip, deflate",
++                "accept-encoding": "gzip, deflate, br",
+                 "accept": "*/*",
+                 "connection": "keep-alive",
+             }

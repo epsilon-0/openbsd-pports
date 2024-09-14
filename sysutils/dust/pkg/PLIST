@@ -1,0 +1,2 @@
+@bin bin/dust
+@man man/man1/dust.1

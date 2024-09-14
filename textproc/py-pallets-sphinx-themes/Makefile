@@ -1,12 +1,12 @@
-# $OpenBSD$
-
 COMMENT =		themes for the pallets projects
 
-MODPY_EGG_VERSION =		1.2.3
-DISTNAME =		Pallets-Sphinx-Themes-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME:L}
+MODPY_EGG_VERSION =	2.1.3
 
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+GH_ACCOUNT =		pallets
+GH_PROJECT =		pallets-sphinx-themes
+GH_TAGNAME =		${MODPY_EGG_VERSION}
+
+PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		textproc devel
 
@@ -17,12 +17,11 @@ MAINTAINER =		Aisha Tammy <openbsd@aisha.cc>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MODPY_PI =		Yes
-
 MODULES =		lang/python
 
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		flit_core
 
+# no tests in package
 NO_TEST =		Yes
 
 .include <bsd.port.mk>
